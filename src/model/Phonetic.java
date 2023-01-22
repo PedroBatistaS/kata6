@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement(name = "p")
-public class P {
+public class Phonetic {
     @XmlElement(name = "text")
     public String text;
     @XmlElement(name = "audio")
@@ -28,35 +28,18 @@ public class P {
 
     @Override
     public String toString() {
-        return "Phonetic{text=" + text + ", audio=" + audio + ", sourceUrl=" + sourceUrl + ", license=" + license + '}';
+        return "Phonetic{text=" + text + ", audio=" + audio + ", sourceUrl=" + sourceUrl + ", licencia=" + license + '}';
     }
-
-    @XmlRootElement(name = "license")
-    public static class License {
-        @XmlElement(name = "name")
-        public String name;
-        @XmlElement(name = "url")
-        public String url;
-
-        public License(String name, String url) {
-            this.name = name;
-            this.url = url;
-        }
-
-        public License() {
-        }
-    }
-
-    @XmlRootElement(name = "p")
-    public static class P {
+    
+    public static class Phonetics {
         @XmlElement(name = "phonetic")
         private List<Phonetic> phonetics;
 
-        public P(List<Phonetic> phonetics) {
+        public Phonetics(List<Phonetic> phonetics) {
             this.phonetics = phonetics;
         }
 
-        public P() {
+        public Phonetics() {
             this.phonetics = new ArrayList<>();
         }
     }
